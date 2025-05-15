@@ -28,3 +28,11 @@ URL “amqp\://guest\:guest\@localhost:5672” yang digunakan baik pada program 
 Pada saat menjalankan perintah cargo run pada program publisher, lima event (2x cargo run maka = 10 event) dikirimkan ke message broker (RabbitMQ). Setiap event berisi informasi terkait dengan pembuatan pengguna baru (misalnya user_id dan user_name). Event-event ini kemudian diterima dan diproses oleh subscriber yang sudah terhubung dengan queue yang sama di RabbitMQ. Proses ini memungkinkan komunikasi antar program dengan menggunakan sistem berbasis message queue, yang memastikan bahwa pesan diproses secara terpisah dan async. Di console subscriber, kita bisa melihat bagaimana pesan-pesan ini diterima dan diproses sesuai dengan handler yang sudah didefinisikan.
 
 ---
+
+### Monitoring chart based on publisher
+
+![image](https://github.com/user-attachments/assets/f50bb6a7-50c9-4fda-9ba6-25ad49f61dab)
+
+Ketika publisher mengirimkan event, terlihat ada spike (2 spike karena 2x run) yang terjadi pada grafik yang menunjukkan aktivitas di channel. Spike ini terjadi karena message broker harus memproses sejumlah besar pesan dalam waktu singkat, yang menghasilkan peningkatan dalam jumlah koneksi dan aktivitas pada broker. Dengan menjalankan publisher secara berulang, kita dapat melihat bagaimana RabbitMQ mengelola beban pesan dan bagaimana sistem menangani lonjakan traffic secara dinamis. Grafik ini memberikan gambaran tentang bagaimana message broker merespons beban yang ditimbulkan oleh publisher yang mengirimkan banyak event.
+
+---
