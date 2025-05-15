@@ -14,3 +14,8 @@ program, what does it mean?
 URL “amqp\://guest\:guest\@localhost:5672” yang digunakan baik pada program publisher maupun subscriber menunjukkan bahwa kedua program tersebut menggunakan message broker yang sama, yaitu RabbitMQ yang berjalan secara lokal di komputer pengguna. Dalam URL tersebut, kata "guest" pertama merupakan username, dan "guest" kedua adalah password yang digunakan untuk autentikasi ke server RabbitMQ. Sementara itu, "localhost" menunjukkan bahwa koneksi dilakukan ke server yang berada di komputer lokal, dan angka "5672" adalah port default yang digunakan untuk komunikasi AMQP. Dengan demikian, kesamaan URL ini menunjukkan bahwa publisher dan subscriber saling terhubung melalui RabbitMQ lokal yang sama, sehingga pesan yang dikirim oleh publisher dapat diterima oleh subscriber sesuai dengan event yang didaftarkan.
 
 ---
+
+### Screenshot of Running RabbitMQ
+![image](https://github.com/user-attachments/assets/a9aa833e-0b0b-4166-89c6-3fe93bd54b64)
+
+---
